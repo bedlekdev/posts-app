@@ -15,7 +15,8 @@
 
 ## Dokumentácia API - Swagger
 
-    http://localhost:8080/api/swagger-ui/index.html
+Full list of available REST endpoints could be found in Swagger UI,
+which could be called using link: **http://localhost:8080/api/swagger-ui.html**
 
 ## Getting Started
 

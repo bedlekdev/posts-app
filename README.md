@@ -47,7 +47,7 @@ After running the app it can be accessible using this connectors:
 #### Posts-api (REST API)
 
 This is a Spring Boot (Java) based application that connects with a
-database that and expose the REST endpoints that can be consumed by
+database and expose the REST endpoints that can be consumed by
 frontend. It supports multiple HTTP REST methods like GET, POST, PUT and
 DELETE for post resource.
 
