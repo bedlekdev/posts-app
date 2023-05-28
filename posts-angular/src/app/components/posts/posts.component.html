@@ -1,0 +1,8 @@
+<div class="posts">
+  <app-post-card
+    *ngFor="let post of posts$ | async"
+    [post]="post"
+    (update)="onUpdate(post)"
+    (delete)="onDelete(post)"
+  ></app-post-card>
+</div>

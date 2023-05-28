@@ -1,0 +1,18 @@
+<mat-toolbar class="action-panel" color="accent">
+  <button mat-raised-button color="primary" (click)="onAddPost()">
+    Add Post
+  </button>
+  <mat-form-field class="serch-options" appearance="standard">
+    <mat-label>Search options</mat-label>
+    <mat-select [(value)]="searchOption">
+      <mat-option *ngFor="let option of options" [value]="option.value">
+        {{ option.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="search-value" appearance="standard">
+    <mat-label>Search value</mat-label>
+    <input matInput type="text" [(ngModel)]="searchValue" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+</mat-toolbar>

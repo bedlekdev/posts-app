@@ -1,0 +1,17 @@
+<mat-card class="post-card">
+  <mat-card-title>{{ post.title }}</mat-card-title>
+  <mat-card-subtitle>
+    Post id: {{ post.id }}, User id: {{ post.userId }}
+  </mat-card-subtitle>
+  <mat-card-content class="content">
+    <p>{{ post.body }}</p>
+  </mat-card-content>
+  <mat-card-actions class="actions">
+    <button mat-raised-button color="primary" (click)="update.emit()">
+      Update
+    </button>
+    <button mat-raised-button color="warn" (click)="delete.emit()">
+      Delete
+    </button>
+  </mat-card-actions>
+</mat-card>

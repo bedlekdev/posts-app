@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content>
+  <ng-form class="post-form" [formGroup]="form">
+    <ng-container
+      *ngTemplateOutlet="
+        textInput;
+        context: { label: 'Post ID', control: form.controls['id'] }
+      "
+    ></ng-container>
+    <ng-container
+      *ngTemplateOutlet="
+        textInput;
+        context: { label: 'User ID', control: form.controls['userId'] }
+      "
+    ></ng-container>
+    <ng-container
+      *ngTemplateOutlet="
+        textInput;
+        context: { label: 'Title', control: form.controls['title'] }
+      "
+    ></ng-container>
+    <mat-form-field appearance="standard">
+      <mat-label>Body</mat-label>
+      <textarea matInput formControlName="body"></textarea>
+    </mat-form-field>
+  </ng-form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="form.invalid"
+    (click)="onSubmit()"
+  >
+    Submit
+  </button>
+</div>
+
+<ng-template #textInput let-label="label" let-control="control">
+  <mat-form-field class="form-field" appearance="standard" color="primary">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput type="text" [formControl]="control" />
+    <mat-error>{{ getError(control) }}</mat-error>
+  </mat-form-field>
+</ng-template>
